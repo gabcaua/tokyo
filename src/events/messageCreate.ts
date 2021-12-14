@@ -36,5 +36,6 @@ export = {
     const cmd = desacentuar(cmdStr.slice(prefix.length))
     if (cmd.length == 0) return
     let command = tokyo.commands.get(tokyo.aliases.get(cmd)) || tokyo.commands.get(cmd);
+    command.run(tokyo, message, args)
   }
 }
