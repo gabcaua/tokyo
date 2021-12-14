@@ -14,8 +14,12 @@ export = {
         content: message.author.mention,
         embed: {
           title: '**Tokyo™** » Guia rápido:',
-          description: '✨ » Para falar comigo, use o prefixo: **`tk.`**',
-          color: colors["default"]
+          description: '✨ » Para falar comigo, use o prefixo: **`tk.`**\
+          \n☝️ » **Precisa de ajuda?** Use: **`tk.ajuda`**',
+          color: colors["default"],
+          footer: {
+            text: 'Obrigada por me utilizar!'
+          }
         }
       })
     }
