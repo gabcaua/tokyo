@@ -1,6 +1,8 @@
+const desacentuar = require('desacentuador')
 import colors from '../cogs/colors'
 export = {
   execute: (message: any, tokyo: any) => {
+    const prefix = "tk."
     /* barrar algumas situações */
     //console.log(message.member.guild)
     if (!message.channel.guild) return;
@@ -23,5 +25,16 @@ export = {
         }
       })
     }
+    /* 2. operar comandos: */
+    if (!message.content.startsWith(prefix)) return
+    const args = message.content
+      .split(" ")
+      .slice(1)
+    const cmdStr = message.content
+      .toLowerCase()
+      .split(" ")[0]
+    const cmd = desacentuar(cmdStr.slice(prefix.length))
+    if (cmd.length == 0) return
+    let command = tokyo.commands.get(tokyo.aliases.get(cmd)) || tokyo.commands.get(cmd);
   }
 }
