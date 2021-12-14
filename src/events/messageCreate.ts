@@ -1,4 +1,4 @@
-import c from '../cogs/colors'
+import colors from '../cogs/colors'
 export = {
   execute: (message: any, tokyo: any) => {
     /* barrar algumas situações */
@@ -13,9 +13,9 @@ export = {
       tokyo.createMessage(message.channel.id, {
         content: message.author.mention,
         embed: {
-          title: 'Olá!',
-          description: 'b',
-          color: c.default
+          title: '**Tokyo™** » Guia rápido:',
+          description: '✨ » Para falar comigo, use o prefixo: **`tk.`**',
+          color: colors["default"]
         }
       })
     }
